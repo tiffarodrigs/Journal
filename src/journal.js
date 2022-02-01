@@ -2,14 +2,20 @@ export function Entry(yourEntry){
   this.yourEntry=yourEntry;
 }
 Entry.prototype.numberOfWords=function(){
-  return "yet to write functionality";
+  let wordArray=[];
+  wordArray = this.yourEntry.split(" ");
+  return wordArray.length;
 };
 Entry.prototype.numberOfVowels=function(){
-  return "yet to write functionality";
+  const regex = /[aeiou]/gi;
+  const vowelNum = this.yourEntry.match(regex).length;
+  return vowelNum;
 
 };
 Entry.prototype.numberOfConsonants=function(){
-  return "yet to write functionality";
+  let consonantRegex = /[bcdfghjklmnpqrstvwxyz]/gi;
+  const consoNum = this.yourEntry.match(consonantRegex).length;
+  return consoNum;
 
 };
 Entry.prototype.getTeaser=function(){
